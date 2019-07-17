@@ -1,9 +1,9 @@
-<app-header></app-header>
+<app-header (onSelectFeatureEvent)="loadFeature($event)"></app-header>
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <app-recipes></app-recipes>
-      <app-shopping-list></app-shopping-list>
+      <app-recipes *ngIf="loadedFeature === RECIPE"></app-recipes>
+      <app-shopping-list *ngIf="loadedFeature === SHOPPING"></app-shopping-list>
     </div>
   </div>
 </div>
